@@ -1,0 +1,12 @@
+/* container */
+.container-fluid {
+  max-width: 1200px;
+}
+
+button {
+  width: 100px;
+}
+
+input {
+  width: 100px;
+}

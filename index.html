@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/application.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <title>shopping cart</title>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h3 class="">Shopping Cart</h3>
+        <div class="col-12">
+          <table class="table main-table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Value</th>
+                <th scope="col">QTY</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="item">Apple</td>
+                <td class="value"><input type="number" value="0.25" /></td>
+                <td class="quantity"><input type="number" value="5" /></td>
+                <td class="total"></td>
+                <td><button class="remove btn btn-light btn-sm">Remove</button></td>
+              </tr>
+              <tr>
+                <td class="item">Banana</td>
+                <td class="value"><input type="number" value="0.5" /></td>
+                <td class="quantity"><input type="number" value="5" /></td>
+                <td class="total"></td>
+                <td><button class="remove btn btn-light btn-sm">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="col-12">
+          <form id="addInput">
+            <table class="table input-table">
+              <thead class="thead-dark">
+                <tr>
+                  <td class="item-input"><input type="text" placeholder="durian" required /></td>
+                  <td class="value-input"><input type="number" placeholder="2.00"/></td>
+                  <td class="quantity-input"><input type="number" placeholder="1.00"/></td>
+                  <td></td>
+                  <td class="new-row"><button class="add btn btn-light btn-sm" >Add</button></td>
+                </tr>
+              </thead>
+            </table>
+          </form>
+        </div>
+
+        <div class="col-md-9">
+          <h4 class="text-right">Grand Total:<span class="grand-total"></span></h4>
+        </div>
+
+      </div>
+  </body>
+</html>
