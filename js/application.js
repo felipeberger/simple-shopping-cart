@@ -13,7 +13,9 @@ var calcTotal = function () {
 var updateGrandTotal = function () {
   var grandTotal = 0;
   $("tbody tr").each(function (index, element) {
-    grandTotal += parseFloat($(this).children(".total").text());
+    if ($(this).children(".total").text() !== "") {
+      grandTotal += parseFloat($(this).children(".total").text());
+    }
   })
   $(".grand-total-span").html(grandTotal);
 }
