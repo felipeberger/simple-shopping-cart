@@ -17,57 +17,57 @@
     <title>shopping cart</title>
 
   </head>
-  <body>
-    <div class="container-fluid">
+  <body style="background-image: url('./supermarket_pic (Large).jpg')">
+    <div class="container-fluid mt-2">
       <h3 class="">Shopping Cart</h3>
         <div class="col-12">
           <table class="table main-table">
-            <thead class="thead-light">
+            <thead class="bg-primary">
               <tr>
                 <th scope="col">Item</th>
-                <th scope="col">Value</th>
+                <th scope="col">Value ($)</th>
                 <th scope="col">QTY</th>
-                <th scope="col">Total</th>
+                <th scope="col">Total ($)</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="item">Apple</td>
+                <th scope="row" class="item">Apple</th>
                 <td class="value"><input type="number" value="0.25" /></td>
                 <td class="quantity"><input type="number" value="5" /></td>
                 <td class="total"></td>
-                <td><button class="remove btn btn-light btn-sm">Remove</button></td>
+                <td><button class="remove btn btn-warning">Remove</button></td>
               </tr>
               <tr>
-                <td class="item">Banana</td>
+                <th scope="row" class="item">Banana</th>
                 <td class="value"><input type="number" value="0.5" /></td>
                 <td class="quantity"><input type="number" value="5" /></td>
                 <td class="total"></td>
-                <td><button class="remove btn btn-light btn-sm">Remove</button></td>
+                <td class=""><button class="remove btn btn-warning">Remove</button></td>
               </tr>
             </tbody>
           </table>
-
         </div>
+
         <div class="col-12">
           <form id="addInput">
             <table class="table input-table">
-              <thead class="thead-dark">
+              <thead class="bg-info">
                 <tr>
-                  <td class="item-input"><input type="text" placeholder="durian" required /></td>
-                  <td class="value-input"><input type="number" placeholder="2.00"/></td>
-                  <td class="quantity-input"><input type="number" placeholder="1.00"/></td>
-                  <td></td>
-                  <td class="new-row"><button class="add btn btn-light btn-sm" >Add</button></td>
+                  <th class="item-input"><input type="text" placeholder="Durian" required /></th>
+                  <th class="value-input"><input type="number" placeholder="2.00"/></th>
+                  <th class="quantity-input"><input type="number" placeholder="1.00"/></th>
+                  <th></th>
+                  <th><button class="add btn btn-success" >Add</button></th>
                 </tr>
               </thead>
             </table>
           </form>
         </div>
 
-        <div class="col-md-9">
-          <h4 class="text-right">Grand Total:<span class="grand-total"></span></h4>
+        <div class="col-md-12">
+          <h4 class="text-right grand-total">Grand Total: $<span class="grand-total-span"></span></h4>
         </div>
 
       </div>

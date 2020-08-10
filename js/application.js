@@ -15,7 +15,7 @@ var updateGrandTotal = function () {
   $("tbody tr").each(function (index, element) {
     grandTotal += parseFloat($(this).children(".total").text());
   })
-  $(".grand-total").html(grandTotal);
+  $(".grand-total-span").html(grandTotal);
 }
 
 // ----------------- event handlers ---------------------------
@@ -23,11 +23,15 @@ var updateGrandTotal = function () {
 // remove row button
 $(document).on('click', '.btn.remove', function() {
   $(this).closest('tr').remove();
+  updateGrandTotal();
 });
 
 // update total upon losing focus of input
 // null --> null
-$(document).on('blur', 'input', calcTotal);
+$(document).on('blur', 'input', function () {
+  calcTotal();
+  updateGrandTotal();
+});
 
 // update total upon pressing enter key on input
 // null --> null
@@ -47,11 +51,11 @@ $(document).on('submit', '#addInput',  function (event) {
 
   $('tbody').first().append(
     '<tr>'+
-      '<td class="item">' + item + '</td>' +
+      '<th scope="row" class="item">' + item + '</th>' +
       '<td class="value"><input type="number" value="' + value + '" /></td>' +
       '<td class="quantity"><input type="number" value="' + quantity + '" /></td>' +
       '<td class="total"></td>' +
-      '<td><button class="remove btn btn-light btn-sm">Remove</button></td>' +
+      '<td><button class="remove btn btn-warning">Remove</button></td>' +
     '</tr>'
   )
 
