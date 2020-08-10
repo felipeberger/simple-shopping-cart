@@ -10,13 +10,15 @@ var calcTotal = function () {
   });
 };
 
+var updateGrandTotal = function () {
+  var grandTotal = 0;
+  $("tbody tr").each(function (index, element) {
+    grandTotal += parseFloat($(this).children(".total").text());
+  })
+  $(".grand-total").html(grandTotal);
+}
 
-// ------------------ Button Functionality ----------------------
-
-
-
-
-// ----------------- implementation ---------------------------
+// ----------------- event handlers ---------------------------
 
 // remove row button
 $(document).on('click', '.btn.remove', function() {
@@ -32,6 +34,7 @@ $(document).on('blur', 'input', calcTotal);
 $(document).on('keypress', 'input', function () {
   if (event.which === 13) {
     calcTotal();
+    updateGrandTotal();
   }
 });
 
@@ -57,10 +60,12 @@ $(document).on('submit', '#addInput',  function (event) {
   $(this).find('.quantity-input input').val('');
 
   calcTotal();
+  updateGrandTotal();
 })
 
 
 // initial calculations
 $(document).ready(function() {
   calcTotal();
+  updateGrandTotal();
 });
